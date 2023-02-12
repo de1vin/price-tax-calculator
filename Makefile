@@ -35,4 +35,6 @@ console-backend: ## Login in backend console.
 	docker-compose -f docker-compose.yml exec backend /bin/bash
 
 install-backend: ## Install dependencies.
+	docker-compose -f docker-compose.yml exec backend cp -n ./.env.example ./.env
 	docker-compose -f docker-compose.yml exec backend composer install
+	docker-compose -f docker-compose.yml exec backend yarn install

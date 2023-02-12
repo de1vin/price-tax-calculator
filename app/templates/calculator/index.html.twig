@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h1 class="text-center pt-3">Price calculator</h1>
+  <hr>
+{#  {{ form(calculatorForm) }}#}
+  {{ form_start(calculatorForm) }}
+    <div class="row">
+      <div class="col">
+        {{ form_row(calculatorForm.product) }}
+      </div>
+      <div class="col">
+        {{ form_row(calculatorForm.taxCode) }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        {{ form_row(calculatorForm.calcBtn) }}
+      </div>
+    </div>
+  {{ form_end(calculatorForm) }}
+  {% if calculatedResult %}
+    <hr>
+    <div>
+      <b>Result price: {{ calculatedResult.calculatedPrice }}</b>
+      <br>
+      <small>Country: {{ calculatedResult.country }}</small>
+      <br>
+      <small>Tax rate: {{ calculatedResult.taxRate }}%</small>
+      <br>
+      <small>Tax value: {{ calculatedResult.taxValue }} €</small>
+    </div>
+  {% endif %}
+{% endblock %}
