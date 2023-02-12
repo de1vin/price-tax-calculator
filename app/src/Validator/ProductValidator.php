@@ -13,6 +13,9 @@ use Symfony\Component\Validator\Exception\UnexpectedValueException;
  */
 class ProductValidator extends ConstraintValidator
 {
+    /**
+     * @param ProductService $productService
+     */
     public function __construct(private readonly ProductService $productService)
     {}
 

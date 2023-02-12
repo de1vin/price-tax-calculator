@@ -2,10 +2,10 @@
 
 namespace App\Service;
 
-
 use App\Helper\ModelListLoader;
 use App\Model\Product\ProductInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
+
 
 /**
  * Class ProductService
@@ -41,6 +41,11 @@ class ProductService
         return $products;
     }
 
+    /**
+     * @param string $productId
+     *
+     * @return ProductInterface|null
+     */
     public function findById(string $productId): ?ProductInterface
     {
         $productModel = null;

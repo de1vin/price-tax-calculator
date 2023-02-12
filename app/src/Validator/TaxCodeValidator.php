@@ -13,6 +13,9 @@ use Symfony\Component\Validator\Exception\UnexpectedValueException;
  */
 class TaxCodeValidator extends ConstraintValidator
 {
+    /**
+     * @param TaxService $taxService
+     */
     public function __construct(private readonly TaxService $taxService)
     {}
 
