@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 
 
 /**
@@ -20,7 +19,6 @@ class CalculatorController extends AbstractController
 {
     public function __construct(
         private readonly CalculatorService $calculatorService,
-        private readonly DenormalizerInterface $denormalizer,
     ) {}
 
     /**
@@ -33,11 +31,7 @@ class CalculatorController extends AbstractController
     #[Route('', name: 'index')]
     public function index(Request $request): Response
     {
-        /** @var ProductToCalculationDto $productToCalculation */
-        $productToCalculation = $this->denormalizer->denormalize(
-            $request->request->all(),
-            ProductToCalculationDto::class
-        );
+        $productToCalculation = new ProductToCalculationDto();
 
         $calculatorForm = $this->createForm(CalculatorType::class, $productToCalculation);
         $calculatorForm->handleRequest($request);

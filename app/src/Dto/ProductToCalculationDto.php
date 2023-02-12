@@ -15,9 +15,9 @@ class ProductToCalculationDto
     public function __construct(
         #[Assert\NotBlank]
         #[Product]
-        public ?string $product,
+        public ?string $product = null,
         #[Assert\NotBlank]
         #[TaxCode]
-        public ?string $taxCode
+        public ?string $taxCode = null
     ) {}
 }
