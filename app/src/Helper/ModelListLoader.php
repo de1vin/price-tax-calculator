@@ -47,8 +47,6 @@ class ModelListLoader
             basename($file, '.php')
         ), $modelFiles);
 
-        dd($namespace, $classes);
-
         $models = [];
 
         foreach ($classes as $class) {
