@@ -27,7 +27,7 @@ class ItTax extends AbstractCountryTax
     /**
      * @return string
      */
-    public function getCodePatter(): string
+    public function getCodePattern(): string
     {
         return '/^IT\d{11}$/i';
     }

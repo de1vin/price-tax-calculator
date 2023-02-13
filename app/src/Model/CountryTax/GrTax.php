@@ -27,7 +27,7 @@ class GrTax extends AbstractCountryTax
     /**
      * @return string
      */
-    public function getCodePatter(): string
+    public function getCodePattern(): string
     {
         return '/^GR\d{9}$/i';
     }

@@ -21,7 +21,7 @@ abstract class AbstractCountryTax implements CountryTaxInterface
     /**
      * @return string
      */
-    abstract public function getCodePatter(): string;
+    abstract public function getCodePattern(): string;
 
     /**
      * @return int|float

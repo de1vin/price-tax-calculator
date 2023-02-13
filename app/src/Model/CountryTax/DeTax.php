@@ -27,7 +27,7 @@ class DeTax extends AbstractCountryTax
     /**
      * @return string
      */
-    public function getCodePatter(): string
+    public function getCodePattern(): string
     {
         return '/^DE\d{9}$/i';
     }

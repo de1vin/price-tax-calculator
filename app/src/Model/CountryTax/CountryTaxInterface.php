@@ -21,7 +21,7 @@ interface CountryTaxInterface
     /**
      * @return string
      */
-    public function getCodePatter(): string;
+    public function getCodePattern(): string;
 
     /**
      * @return int|float

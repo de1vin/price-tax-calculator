@@ -51,7 +51,7 @@ class TaxService
         $taxModel = null;
 
         foreach ($this->list() as $tax) {
-            $isPatternMatched = (bool)preg_match($tax->getCodePatter(), $taxCode);
+            $isPatternMatched = (bool)preg_match($tax->getCodePattern(), $taxCode);
 
             if ($isPatternMatched) {
                 $taxModel = $tax;

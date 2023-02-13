@@ -43,9 +43,11 @@ class ModelListLoader
         $modelFiles = glob($modelsPattern);
         $classes = array_map(fn($file) => sprintf(
             '%s\%s',
-            trim($namespace, '/'),
+            trim($namespace, '\\'),
             basename($file, '.php')
         ), $modelFiles);
+
+        dd($namespace, $classes);
 
         $models = [];
 
